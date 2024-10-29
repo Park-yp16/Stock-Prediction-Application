@@ -1,0 +1,148 @@
+body{
+    width: 99%;
+    height: 100%;
+    background: #42455a;
+}
+
+.menu ul{
+    display: inline-flex;
+    margin: 50px;
+}
+
+.menu ul li{
+    list-style: none;
+    margin: 0 20px;
+    cursor: pointer;
+}
+
+.menu ul li:hover{
+    color: #fd00da !important;
+}
+
+.menu ul li a{
+    text-decoration: none;
+    color: #b2b2b2;
+}
+
+.menu ul li a span:hover{
+    color: #fd00da !important;
+}
+
+.logo img{
+    width: 30px;
+    margin-top: -7px;
+    margin-right: 48px;
+}
+
+.active{
+    color: #19dafa;
+}
+
+.not-active{
+    color: #b2b2b2;
+}
+
+.signup-btn{
+    top: 40px;
+    right: 80px;
+    position: absolute;
+    text-decoration: none;
+    color: #fff;
+    border: 2px solid transparent;
+    border-radius: 20px;
+    background-image: linear-gradient(#42455a, #42455a), radial-gradient(circle at top left, #fd00da, #19d7f8);
+    background-origin: border-box;
+    background-clip: content-box, border-box;
+}
+
+.signup-btn span{
+    display: block;
+    padding: 8px 22px;
+}
+
+.login-btn{
+    top: 40px;
+    right: 190px;
+    position: absolute;
+    text-decoration: none;
+    color: #fff;
+    border: 2px solid transparent;
+    border-radius: 20px;
+    background-image: linear-gradient(#42455a, #42455a), radial-gradient(circle at top left, #fd00da, #19d7f8);
+    background-origin: border-box;
+    background-clip: content-box, border-box;
+}
+
+.login-btn span{
+    display: block;
+    padding: 8px 22px;
+}
+
+.stock-options-border{
+    width: 500px;
+    height: 400px;
+    margin-top: 100px;
+    margin-left: 100px;
+    border: 2px solid transparent;
+    border-radius: 25px;
+    background-image: linear-gradient(#42455a, #42455a), radial-gradient(circle at top left, #fd00da, #19d7f8);
+    background-origin: border-box;
+    background-clip: content-box, border-box;
+}
+
+.stock-options{
+    width: 500px;
+    height: 400px;
+    background-color: #2e303f;
+    border-radius: 25px;
+}
+
+.stock-option-title{
+    color: #b2b2b2;
+    margin-left: 20px;
+    margin-top: -35px;
+    position: absolute;
+}
+
+.stock-options ul{
+    font-size: 25px;
+    display:inline-flex;
+    position: absolute;
+}
+
+.stock-options-time{
+   margin-left: 20px;
+   color: #b2b2b2;
+}
+
+.col-md-4-control-label{
+    margin-top: 50px;
+}
+
+.col-md-5{
+    margin-top: 20px;
+    width: 100%;
+}
+
+.sub-btn{
+    width: 80%;
+    height: 30px;
+    margin-left: 40px;
+    margin-top: 30px;
+}
+
+.TimeSelector{
+    margin-top: 50px;
+    margin-left: 50px;
+}
+
+.stock-graph{
+    width: 500px;
+    height: 500px;
+    background: aqua;
+    position: absolute;
+    margin-top: -400px;
+    margin-left: 1000px;
+}
+
+

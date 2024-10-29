@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+
+{% block head %}
+
+{% endblock %}
+
+{% block body %}
+<div class="content">
+    <h1>Stock predictor</h1>
+    <center>
+    <form action="">
+        <table style="background: white;">
+            <tr>
+                <th>Stock</th>
+                <th>Time (years)</th>
+                <th></th>
+            </tr>
+            <tr>
+                <td><select name="Stock">
+                        <option value="smp">SMP</option>
+                        <option value="dow">DOW</option>
+                        <option value="nasdaq">nasdaq</option>
+                    </select>
+                </td>
+                <td>
+                    <select name="Time">
+                        <option value="1t">1</option>
+                        <option value="3t">3</option>
+                        <option value="5t">5</option>
+                        <option value="10t">10</option>
+                        <option value="15t">15</option>
+                        <option value="20t">20</option>
+                    </select>
+                </td>
+                <td>
+                    <form action="/" method="POST">
+                        <input type="submit" value="predict">
+                    </form>
+                </td>
+            </tr>
+        </table>
+    </form>
+    </center>
+</div>
+
+<div>
+    <center>
+    <img src="/plot.png" alt="Temp Image for testing">
+    </center>
+</div>
+
+
+{% endblock %}

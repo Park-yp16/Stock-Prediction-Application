@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <![endif]-->
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="stocks.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="menu">
+            <ul>
+                <li class="logo"><a href="index.html"><img src="logo.png"></a></li>
+                <li><a href="index.html"><span class="not-active">Home</span></a></li>
+                <li><a href="stocks.html"><span class="active">Stocks</span></a></li>
+                <li><a href="contact.html"><span class="not-active">Contact</span></li>
+                <li><a href="about.html"><span class="not-active">About</span></li>
+                <li><a href="login.html" class="login-btn"><span>Login</span></a></li>
+                <li><a href="sign-up.html" class="signup-btn"><span>Sign Up</span></a></li>
+            </ul>
+        </div>
+
+        <div class="stock-options-border">
+            <h1 class="stock-option-title">Stock Modifier</h1>
+            <div class="stock-options">
+                <form class="stock-options-time" action="">
+                    
+                    <label for="TimeSelector" class="TimeSelector">Select Time</label>
+                    <select name="TimeSelector" class="TimeSelector">
+                        <option value="1 Year"> 1 Year </option>
+                        <option value="3 Years"> 3 Years </option>
+                        <option value="5 Years"> 5 Years </option>
+                        <option value="10 Years"> 10 Years </option>
+                        <option value="15 Years"> 15 Years </option>
+                        <option value="20 Years"> 20 Years </option>
+                    </select>
+
+                    <label for="StockSelector" class="StockSelector">Select Stocks</label>
+                    <select name="StockSelector" class="StockSelector">
+                        <option value="AMZN"> AMZN </option>
+                        <option value="TSLA"> TSLA </option>
+                        <option value="NDAQ"> NDAQ </option>
+                        <option value="DJI"> DJI </option>
+                        <option value="AAPL"> AAPL </option>
+                        <option value="MSFT"> MSFT </option>
+                        <option value="NIO"> NIO </option>
+                        <option value="NVDA"> NVDA </option>
+                        <option value="FB"> FB </option>
+                        <option value="TWTR"> TWTR </option>
+                        <option value="WMT"> WMT </option>
+                        <option value="INX"> INX </option>
+                    </select>
+                    <input type="submit" value="Predict!" class="sub-btn">
+                </form>
+            </div>
+        </div>
+        <div class="stock-graph">
+
+        </div>
+    </div>
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

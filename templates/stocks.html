@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/stocks.css') }}">
+
+    <style>
+        .output{
+            width: 200px;
+            height: 200px;
+            margin-left: 24%;
+            margin-top: -175px;
+            border: 2px solid transparent;
+            border-radius: 25px;
+            background-image: linear-gradient(#42455a, #42455a), radial-gradient(circle at top left, #fd00da, #19d7f8);
+            background-origin: border-box;
+            background-clip: content-box, border-box;
+            position: absolute;
+        }
+
+        .output-div{
+            background: #2e303f;
+            width: 200px;
+            height: 200px;
+            border-radius: 25px;
+            position: absolute;
+        }
+
+        .output-div p{
+            text-align: center;
+            color: #b2b2b2;
+        }
+</style>
+</head>
+
+<body>
+    <div class="container">
+        {% include 'header.html' %}
+
+        <div class="stock-options-border">
+            <h1 class="stock-option-title">Stock Modifier</h1>
+            <div class="stock-options">
+                <form class="stock-options-time" action="{{url_for('stocks')}}" method="POST">
+                    <span class="TimeSelectorLable">
+                        <label for="TimeSelector">Select Time </label>
+                        <select name="TimeSelector" class="TimeSelector" id="TimeSelector">
+                            <option value=15></option>
+                            <option value=15> 15 Day </option>
+                            <option value=30> 1 Month </option>
+                            <option value=60> 2 Months </option>
+                            <option value=90> 3 Months </option>
+                            <option value=180> 6 Months </option>
+                            <option value=365> 1 Year </option>
+                            <option value=730> 2 Years </option>
+                        </select>
+                    </span>
+
+                    <span class="StockSelectorLable">
+                        <label for="StockSelector" class="StockSelector">Select Stocks</label>
+                        <select name="StockSelector" class="StockSelector" id="StockSelector">
+                            <option value="AMZN"></option>
+                            <option value="AMZN"> AMZN </option>
+                            <option value="TSLA"> TSLA </option>
+                            <option value="^IXIC"> NDAQ </option>
+                            <option value="^DJI"> DJI </option>
+                            <option value="AAPL"> AAPL </option>
+                            <option value="MSFT"> MSFT </option>
+                            <option value="NIO"> NIO </option>
+                            <option value="NVDA"> NVDA </option>
+                            <option value="FB"> FB </option>
+                            <option value="TWTR"> TWTR </option>
+                            <option value="WMT"> WMT </option>
+                            <option value="^GSPC"> S&P500 </option>
+                        </select>
+                    </span>
+                    <input type="submit" value="Predict!" class="sub-btn">
+                </form>
+            </div>
+        </div>
+        {%if imagePath%}
+        <div class="stock-graph">
+            <img src="{{imagePath}}" class="graph-pic">
+        </div>
+        {%endif%}
+        <div class="output">
+            <div class="output-div">
+                <!-- <p>{{output}}</p> -->
+                <p class="CurrentTicker">Current: {{current}}</p><!--Current-->
+                
+                <p class="PredictedTicker">Predicted: {{pred_value}}</p><!--Predicted-->
+               
+                <p class="PreciseProfit">Profit: {{profit_value}}</p><!--Precise Profit-->
+                
+                <p class="PercentageProfit">Percentage: {{percentage_value}}%</p><!--% Profit-->
+
+                <p class="Conclusion">Conclusion: {{conclusion}}</p>
+                
+            </div>
+        </div>
+        
+    </div>
+</body>
+
+</html>

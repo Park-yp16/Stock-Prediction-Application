@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/mypage.css') }}">
+
+    <style>
+        body{
+    width: 100%;
+    height: 100%;
+    background: #42455a;
+}
+
+.menu ul{
+    display: inline-flex;
+    margin: 50px;
+}
+
+.menu ul li{
+    list-style: none;
+    margin: 0 20px;
+    cursor: pointer;
+}
+
+.menu ul li:hover{
+    color: #fd00da !important;
+}
+
+.menu ul li a{
+    text-decoration: none;
+    color: #b2b2b2;
+}
+
+.menu ul li a span:hover{
+    color: #fd00da !important;
+}
+
+.logo img{
+    width: 30px;
+    margin-top: -7px;
+    margin-right: 48px;
+}
+
+.active{
+    color: #19dafa;
+}
+
+.not-active{
+    color: #b2b2b2;
+}
+
+.mypage-btn{
+    top: 40px;
+    right: 200px;
+    position: absolute;
+    text-decoration: none;
+    color: #fff;
+    border: 2px solid transparent;
+    border-radius: 20px;
+    background-image: linear-gradient(#42455a, #42455a), radial-gradient(circle at top left, #fd00da, #19d7f8);
+    background-origin: border-box;
+    background-clip: content-box, border-box;
+}
+
+.mypage-btn span{
+    display: block;
+    padding: 8px 22px;
+}
+
+.signout-btn{
+    top: 40px;
+    right: 80px;
+    position: absolute;
+    text-decoration: none;
+    color: #fff;
+    border: 2px solid transparent;
+    border-radius: 20px;
+    background-image: linear-gradient(#42455a, #42455a), radial-gradient(circle at top left, #fd00da, #19d7f8);
+    background-origin: border-box;
+    background-clip: content-box, border-box;
+}
+
+.signout-btn span{
+    display: block;
+    padding: 8px 22px;
+}
+
+.mypageForm {
+  position:absolute;
+  width:1000px;
+  height:80px;
+  padding: 30px, 20px;
+  background-color:#FFFFFF;
+  text-align:center;
+  top:25%;
+  left:50%;
+  transform: translate(-50%,-50%);
+  border-radius: 15px;
+}
+
+.mypageForm li{
+    text-align: Right;
+}
+
+.mypageForm h2{
+  text-align: left;
+  margin: 30px;
+}
+
+.ProfUpdaters{
+    position: absolute;
+    margin-top: -88px;
+    margin-left: 850px;
+    color: black;
+}
+
+
+</style>
+</head>
+
+<body>
+    <div class="container">
+    {% include 'header.html' %}
+        <form action="/mypage" method="post" class="mypageForm">
+            <h2>My Page</h2>
+            <div class="ProfUpdaters">
+                <li><a href="/updateName"><span class="not-active">Update name</span></a></li>
+                <li><a href="/updateEmail"><span class="not-active">Update email</span></a></li>
+                <li><a href="/updatePassword"><span class="not-active">Update password</span></a></li>
+                <li><a href="/updateUsername"><span class="not-active">Update username</span></a></li>
+            </div>
+            <div>
+                {% if session['user_status'] == 'logged_in' %}
+                <div class="app-text">
+                    <h1><span style="color: #fd00da">Name: </span> <span style="color: #19d7f8">{{name}}</span> <br>
+                        <span style="color: #fd00da">Username: </span> <span style="color: #19d7f8">{{username}}</span> <br>
+                        <span style="color: #fd00da">Email: </span> <span style="color: #19d7f8">{{email}}</span> <br>
+                    </h1>
+                </div>
+        	    {% endif %}
+            </div>        
+        </form>        
+    </div>
+</body>
+
+</html>

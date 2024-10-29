@@ -1,0 +1,17 @@
+<div class="menu">
+                <ul>
+                    <li class="logo"><a href="/"><img src="/static/docs/upload/logo.png"></a></li>
+                    <li><a href="/"><span class="active">Home</span></a></li>
+                    <li><a href="/stocks"><span class="not-active">Stocks</span></a></li>
+                    <li><a href="/contact"><span class="not-active">Contact</span></a></li>
+                    <li><a href="/about"><span class="not-active">About</span></a></li>
+                    {%if session['user_status'] == 'logged_out'%}
+                        <li><a href="/login" class="login-btn"><span>Login</span></a></li>
+                        <li><a href="/signup" class="signup-btn"><span>Sign Up</span></a></li>
+                    {%endif%}
+                    {%if session['user_status'] == 'logged_in'%}
+                        <li><a href="/mypage"><span class="not-active">My Page</span></a></li>
+                        <li><a href="/signout" class="signup-btn"><span>Sign out</span></a></li>
+                    {%endif%}
+                </ul>
+            </div>

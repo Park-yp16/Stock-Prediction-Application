@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/sign-up.css') }}">
+</head>
+
+<body>
+    <div class="container">
+        {% include 'header.html' %}
+        <form action="{{url_for('updateNameAttempt')}}" method="post" class="signupForm">
+            {% if msg %}
+        	    <p style="color:red;"> {{msg}} </p>
+        	{% endif %}
+            <h2>Update name</h2>
+            <div class="form">
+                <div class="nameForm">
+                <input type="text" class="name" name="name" placeholder="NEW NAME" required>
+                </div>
+                <div class="nameForm">
+                <input type="text" class="name" name="name2" placeholder="CONFIRM NAME" required>
+                </div>
+            </div>
+            <button type="submit" class="btn" value="submit">
+                Submit changes
+            </button>
+            <div class="bottomText">
+                Don't want to make a change? <a href="/mypage">Go Back</a>
+            </div>
+        </form>        
+    </div>
+</body>
+
+</html>
